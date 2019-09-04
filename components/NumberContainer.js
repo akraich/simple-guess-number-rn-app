@@ -6,7 +6,6 @@ import Colors from "../constants/colors";
 const numberContainer = props => (
   <View style={styles.container}>
     <Text style={styles.number}>{props.children}</Text>
-    <Button title="START GAME" />
   </View>
 );
 
@@ -18,7 +17,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     padding: 10,
-    marginTop: 10
+    marginVertical: 10
   },
   number: {
     color: Colors.secondary,
