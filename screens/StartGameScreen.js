@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import {
   View,
-  Text,
   StyleSheet,
   TouchableWithoutFeedback,
   Button,
@@ -10,6 +9,7 @@ import {
   Alert
 } from "react-native";
 
+import MainButton from "../components/MainButton";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import NumberContainer from "../components/NumberContainer";
@@ -35,14 +35,15 @@ const StartGameScreen = props => {
   if (confirmed) {
     confirmOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected</Text>
+        <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button
-          title="START GAME"
+        <MainButton
           onPress={() => {
             props.onStart(selectedNumber);
           }}
-        />
+        >
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -78,7 +79,7 @@ const StartGameScreen = props => {
       <View style={styles.screen}>
         <TitleText style={styles.title}>Start a new game!</TitleText>
         <Card style={styles.inputContainer}>
-          <Text>Select a number</Text>
+          <BodyText>Select a number</BodyText>
           <Input
             style={styles.input}
             keyboardType="number-pad"
