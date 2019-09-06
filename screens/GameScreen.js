@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import { View, Text, StyleSheet, Alert, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Alert,
+  ScrollView,
+  Dimensions
+} from "react-native";
 
 import Card from "../components/Card";
 import NumberContainer from "../components/NumberContainer";
@@ -94,7 +101,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: 300,
     maxWidth: "80%",
-    justifyContent: "space-between"
+    justifyContent: "space-around",
+    marginTop: Dimensions.get("window").height > 600 ? 20 : 5
   },
   list: {
     flexGrow: 1,
@@ -102,8 +110,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end"
   },
   listContainer: {
-    width: "80%",
-    flex: 1
+    flex: 1,
+    width: Dimensions.get("window").width > 350 ? "60%" : "80%"
   },
   listItem: {
     flexDirection: "row",
@@ -113,7 +121,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: "white",
     justifyContent: "space-between",
-    width: "60%"
+    width: "100%"
   }
 });
 
